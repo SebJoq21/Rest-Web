@@ -1,12 +1,19 @@
-import http from 'http'
+import { envs } from "./config/envs"
+import { Server } from "./presentacion/server"
 
-const server = http.createServer((req, res) => {
-    console.log(req.url)
 
-    res.write('Hola mundo')
-    res.end()
-})
+(() => {
+    main()
+}) ()
 
-server.listen(8081, () => {
-    console.log('Server running on port 8081')
-})
+function main(){
+
+    const server = new Server({
+        port: envs.PORT,
+        public_path: envs.PUBLIC_PATH 
+    })
+    
+    server.start()
+    console.log('main')
+
+}
