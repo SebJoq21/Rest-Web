@@ -4,5 +4,8 @@ keys/
 
 .env
 
-postgres/
+/postgres
+
 /src/generated/prisma
+
+dist/
