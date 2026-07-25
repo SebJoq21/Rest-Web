@@ -1,4 +1,3 @@
-import { text } from "node:stream/consumers";
 
 export class TodoEntity {
 
@@ -24,7 +23,7 @@ export class TodoEntity {
                 throw 'CompletedAt is not a valid date'
             }
         }
-        return new TodoEntity(id, text, completedAt)
+        return new TodoEntity(id, text, newCompletedAt || completedAt)
     }
 
 }
